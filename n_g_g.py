@@ -1,25 +1,21 @@
 from random import randint
 
 draw_number = randint(1, 101)
-print(draw_number)
-guess_number_str = input("Guess the number: ")
-guessed = False
+#print(draw_number)
+guess_number = False
 
-while not guessed:
+while guess_number != draw_number:
+    guess_number = input("Guess the number: ")
     try:
-        guess_number_int = int(guess_number_str)
-        if guess_number_int < draw_number:
-            print("Too small!")
-            #continue
-        if guess_number_int > draw_number:
-            print("Too big!")
-        if guess_number_int == draw_number:
-            print("You win!")
-            guessed = True
-            break
-        #else:
-            #pass
-    except Exception:
+        check_number = int(guess_number)
+    except ValueError or TypeError:
         print("Its not a number!")
-        print(guess_number_str)
-        
+        continue
+    if check_number < draw_number:
+        print("Too small!")
+    elif check_number > draw_number:
+        print("Too big!")
+    else:
+        print("You win!")
+        guess_number = True
+        break
