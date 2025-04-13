@@ -4,6 +4,13 @@ draw_number = randint(1, 101)
 #print(draw_number)
 guess_number = False
 
+"""
+    Number guessing game
+    
+    Computer chose random number between 1 and 100, you guess that number.
+    Too big. Too small. You win.
+    """
+
 while guess_number != draw_number:
     guess_number = input("Guess the number: ")
     try:
@@ -17,5 +24,4 @@ while guess_number != draw_number:
         print("Too big!")
     else:
         print("You win!")
-        guess_number = True
         break
